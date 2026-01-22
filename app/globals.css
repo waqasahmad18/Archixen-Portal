@@ -1,3 +1,19 @@
+/* Hide all Next.js/Vercel floating feedback/preview icons */
+div[style*="z-index: 2147483647"],
+div[style*="z-index: 999999999"],
+div[style*="z-index:999999999"],
+div[style*="z-index:2147483647"],
+.nextjs-portal, .vercel-feedback-button, [aria-label="Feedback"], [aria-label*="Vercel"], [aria-label*="Next.js"],
+iframe[title="Feedback"],
+iframe[title*="Vercel"],
+iframe[title*="Next.js"],
+body > div[style*="position: fixed"][style*="z-index: 2147483647"],
+body > div[style*="position: fixed"][style*="z-index:999999999"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
 @import "tailwindcss";
 
 :root {
@@ -23,4 +39,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide Next.js floating feedback/preview button and all floating N icons */
+[data-nextjs-dialog],
+[id^="__next"] .nextjs-portal,
+div[style*="z-index: 999999999"]:has([aria-label="Feedback"]),
+div[style*="z-index: 2147483647"]:has([aria-label="Feedback"]),
+div[style*="z-index: 2147483647"]:has([data-nextjs-dialog]),
+div[style*="z-index: 2147483647"]:has(button[aria-label*="Vercel"]),
+div[style*="z-index: 2147483647"]:has(button[aria-label*="Feedback"]),
+.nextjs-portal, .vercel-feedback-button, [aria-label="Feedback"], [aria-label*="Vercel"], [aria-label*="Next.js"] {
+  display: none !important;
 }
