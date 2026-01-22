@@ -2,6 +2,8 @@
 import { useState } from "react";
 
 import Image from "next/image";
+
+import CreateUserPage from "./create-user/page";
 import dynamic from "next/dynamic";
 const MyUsersPage = dynamic(() => import("./my-users/page"), { ssr: false });
 
@@ -157,7 +159,9 @@ export default function AdminPortal() {
           </div>
         )}
         {activeTab === "create-user" && (
-          <iframe src="/admin/create-user" style={{width:'100%',height:600,border:'none',borderRadius:16,background:'#fff',boxShadow:'0 2px 16px rgba(0,0,0,0.07)',margin:'0 auto',display:'block'}} title="Create User" />
+          <div style={{ maxWidth: 520, margin: "0 auto" }}>
+            <CreateUserPage />
+          </div>
         )}
         {activeTab === "my-users" && (
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
