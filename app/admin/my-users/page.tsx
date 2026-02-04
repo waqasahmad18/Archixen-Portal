@@ -46,19 +46,19 @@ function EditUserModal({ user, onClose, onSave }: any) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white bg-opacity-60 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-2xl p-6 w-[350px] h-[420px] flex flex-col justify-center relative animate-fadeIn border border-gray-200">
-        <button onClick={onClose} className="absolute top-2 right-2 text-gray-400 hover:text-gray-700 text-xl font-bold">&times;</button>
-        <h3 className="text-xl font-bold text-indigo-700 mb-2 text-center">Edit User</h3>
-        <form onSubmit={handleSubmit} className="space-y-1 overflow-y-auto max-h-[320px] px-1">
+      <div className="bg-white rounded-2xl shadow-2xl p-8 w-[400px] max-h-[80vh] flex flex-col border border-gray-200">
+        <button onClick={onClose} className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-light">&times;</button>
+        <h3 className="text-2xl font-800 text-blue-700 mb-6 text-center">Edit User</h3>
+        <form onSubmit={handleSubmit} className="space-y-4 overflow-y-auto flex-1 pr-2">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <label className="block text-sm font-700 text-gray-700 mb-2">Password</label>
             <div className="relative">
               <input
                 name="password"
                 type={showPassword ? "text" : "password"}
                 value={form.password}
                 onChange={handleChange}
-                className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400 pr-10"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent pr-10 bg-gray-50"
                 autoComplete="off"
               />
               <button
@@ -69,48 +69,44 @@ function EditUserModal({ user, onClose, onSave }: any) {
                 style={{ background: 'none' }}
                 aria-label={showPassword ? "Hide password" : "Show password"}
               >
-                {showPassword ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12.001c1.636 4.048 5.735 7.5 10.066 7.5 2.042 0 3.97-.613 5.566-1.662M6.228 6.228A9.956 9.956 0 0112 4.5c4.331 0 8.43 3.452 10.066 7.5-.477 1.178-1.197 2.276-2.106 3.24M15 12a3 3 0 11-6 0 3 3 0 016 0zm6.772 6.772L6.228 6.228" /></svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5"><path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm6.772 0c-1.636 4.048-5.735 7.5-10.066 7.5S3.57 16.048 1.934 12c1.636-4.048 5.735-7.5 10.066-7.5 4.331 0 8.43 3.452 10.066 7.5z" /></svg>
-                )}
+                {showPassword ? '👁️' : '👁️‍🗨️'}
               </button>
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-            <input name="name" value={form.name} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">Name</label>
+            <input name="name" value={form.name} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-            <input name="email" value={form.email} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">Email</label>
+            <input name="email" value={form.email} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Street Address</label>
-            <input name="street" value={form.street} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">Street Address</label>
+            <input name="street" value={form.street} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Address Line 2</label>
-            <input name="address2" value={form.address2} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">Address Line 2</label>
+            <input name="address2" value={form.address2} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">City</label>
-            <input name="city" value={form.city} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">City</label>
+            <input name="city" value={form.city} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">State / Province</label>
-            <input name="state" value={form.state} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">State / Province</label>
+            <input name="state" value={form.state} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">ZIP / Postal Code</label>
-            <input name="zip" value={form.zip} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">ZIP / Postal Code</label>
+            <input name="zip" value={form.zip} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Country</label>
-            <input name="country" value={form.country} onChange={handleChange} className="input input-bordered w-full rounded-lg focus:ring-2 focus:ring-indigo-400" />
+            <label className="block text-sm font-700 text-gray-700 mb-2">Country</label>
+            <input name="country" value={form.country} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-50" />
           </div>
-          {error && <div className="text-red-600 text-center font-semibold">{error}</div>}
-          <button type="submit" disabled={saving} className="w-full py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-lg shadow transition disabled:bg-gray-400 disabled:cursor-not-allowed">
+          {error && <div className="text-red-600 text-center font-700 bg-red-50 p-3 rounded-lg">{error}</div>}
+          <button type="submit" disabled={saving} className="w-full py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-800 text-base shadow-lg transition disabled:from-gray-400 disabled:to-gray-400 disabled:cursor-not-allowed mt-6">
             {saving ? 'Saving...' : 'Save Changes'}
           </button>
         </form>
@@ -169,53 +165,63 @@ export default function MyUsersPage() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f6f8fa' }}>
-      <div style={{ maxWidth: 520, margin: '0 auto', background: '#fff', borderRadius: 16, boxShadow: '0 2px 16px rgba(0,0,0,0.07)', padding: 36 }}>
-        <h2 style={{ fontSize: 26, fontWeight: 700, marginBottom: 24, color: '#222', textAlign: 'center' }}>My Users</h2>
-        {loading ? (
-          <div style={{ textAlign: 'center', fontSize: 18 }}>Loading...</div>
-        ) : error ? (
-          <div style={{ textAlign: 'center', color: '#e11d48', fontWeight: 600 }}>{error}</div>
-        ) : users.length === 0 ? (
-          <div style={{ textAlign: 'center', color: '#888' }}>No users found.</div>
-        ) : (
-          <div style={{ overflowX: 'auto' }}>
-            <table style={{ minWidth: '100%', borderCollapse: 'collapse' }}>
-              <thead>
-                <tr>
-                  <th style={{ padding: '12px 8px', textAlign: 'left', fontSize: 13, color: '#888', textTransform: 'uppercase', fontWeight: 600 }}>Name</th>
-                  <th style={{ padding: '12px 8px', textAlign: 'left', fontSize: 13, color: '#888', textTransform: 'uppercase', fontWeight: 600 }}>Email</th>
-                  <th style={{ padding: '12px 8px', textAlign: 'left', fontSize: 13, color: '#888', textTransform: 'uppercase', fontWeight: 600 }}>City</th>
-                  <th style={{ padding: '12px 8px', textAlign: 'left', fontSize: 13, color: '#888', textTransform: 'uppercase', fontWeight: 600 }}>Country</th>
-                  <th style={{ padding: '12px 8px', textAlign: 'left', fontSize: 13, color: '#888', textTransform: 'uppercase', fontWeight: 600 }}>Actions</th>
+    <div style={{ width: '100%' }}>
+      <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 32, color: '#1e40af' }}>My Users</h2>
+      {loading ? (
+        <div style={{ textAlign: 'center', fontSize: 16, color: '#6b7280', padding: 60 }}>Loading users...</div>
+      ) : error ? (
+        <div style={{ textAlign: 'center', color: '#dc2626', background: '#fee2e2', padding: 20, borderRadius: 12, fontWeight: 600 }}>{error}</div>
+      ) : users.length === 0 ? (
+        <div style={{ textAlign: 'center', color: '#6b7280', padding: 60, background: '#f9fafb', borderRadius: 12 }}>No users found.</div>
+      ) : (
+        <div style={{ background: '#fff', borderRadius: 16, boxShadow: '0 8px 24px rgba(0,0,0,0.1)', overflow: 'hidden' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+            <thead>
+              <tr style={{ background: '#f9fafb', borderBottom: '2px solid #e5e7eb' }}>
+                <th style={{ padding: '16px 20px', textAlign: 'left', fontSize: 13, color: '#6b7280', textTransform: 'uppercase', fontWeight: 700, letterSpacing: 0.5 }}>Name</th>
+                <th style={{ padding: '16px 20px', textAlign: 'left', fontSize: 13, color: '#6b7280', textTransform: 'uppercase', fontWeight: 700, letterSpacing: 0.5 }}>Email</th>
+                <th style={{ padding: '16px 20px', textAlign: 'left', fontSize: 13, color: '#6b7280', textTransform: 'uppercase', fontWeight: 700, letterSpacing: 0.5 }}>City</th>
+                <th style={{ padding: '16px 20px', textAlign: 'left', fontSize: 13, color: '#6b7280', textTransform: 'uppercase', fontWeight: 700, letterSpacing: 0.5 }}>Country</th>
+                <th style={{ padding: '16px 20px', textAlign: 'center', fontSize: 13, color: '#6b7280', textTransform: 'uppercase', fontWeight: 700, letterSpacing: 0.5 }}>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((user: any) => (
+                <tr key={user._id} style={{ borderBottom: '1px solid #e5e7eb', transition: 'background 0.2s' }} onMouseOver={(e) => e.currentTarget.style.background = '#f9fafb'} onMouseOut={(e) => e.currentTarget.style.background = '#fff'}>
+                  <td style={{ padding: '16px 20px', color: '#1f2937', fontWeight: 600 }}>{user.name}</td>
+                  <td style={{ padding: '16px 20px', color: '#6b7280', fontSize: 14 }}>{user.email}</td>
+                  <td style={{ padding: '16px 20px', color: '#6b7280' }}>{user.city || '-'}</td>
+                  <td style={{ padding: '16px 20px', color: '#6b7280' }}>{user.country || '-'}</td>
+                  <td style={{ padding: '16px 20px', textAlign: 'center' }}>
+                    <button
+                      style={{ padding: '8px 16px', borderRadius: 6, background: '#fbbf24', color: '#92400e', fontWeight: 700, fontSize: 13, border: 'none', marginRight: 8, cursor: 'pointer', transition: 'all 0.2s' }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.background = '#f59e0b';
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.background = '#fbbf24';
+                      }}
+                      onClick={() => setEditUser(user)}
+                      disabled={deletingId === user._id}
+                    >Edit</button>
+                    <button
+                      style={{ padding: '8px 16px', borderRadius: 6, background: '#ef4444', color: '#fff', fontWeight: 700, fontSize: 13, border: 'none', cursor: 'pointer', opacity: deletingId === user._id ? 0.6 : 1, transition: 'all 0.2s' }}
+                      onMouseOver={(e) => {
+                        if (deletingId !== user._id) e.currentTarget.style.background = '#dc2626';
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.background = '#ef4444';
+                      }}
+                      onClick={() => handleDeleteUser(user._id)}
+                      disabled={deletingId === user._id}
+                    >{deletingId === user._id ? 'Deleting...' : 'Delete'}</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {users.map((user: any) => (
-                  <tr key={user._id}>
-                    <td style={{ padding: '10px 8px', borderBottom: '1px solid #eee' }}>{user.name}</td>
-                    <td style={{ padding: '10px 8px', borderBottom: '1px solid #eee' }}>{user.email}</td>
-                    <td style={{ padding: '10px 8px', borderBottom: '1px solid #eee' }}>{user.city || '-'}</td>
-                    <td style={{ padding: '10px 8px', borderBottom: '1px solid #eee' }}>{user.country || '-'}</td>
-                    <td style={{ padding: '10px 8px', borderBottom: '1px solid #eee' }}>
-                      <button
-                        style={{ padding: '6px 16px', borderRadius: 8, background: '#facc15', color: '#fff', fontWeight: 600, fontSize: 15, border: 'none', marginRight: 8, cursor: 'pointer' }}
-                        onClick={() => setEditUser(user)}
-                        disabled={deletingId === user._id}
-                      >Edit</button>
-                      <button
-                        style={{ padding: '6px 16px', borderRadius: 8, background: '#ef4444', color: '#fff', fontWeight: 600, fontSize: 15, border: 'none', cursor: 'pointer' }}
-                        onClick={() => handleDeleteUser(user._id)}
-                        disabled={deletingId === user._id}
-                      >{deletingId === user._id ? 'Deleting...' : 'Delete'}</button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-      </div>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
       {editUser && (
         <EditUserModal
           user={editUser}

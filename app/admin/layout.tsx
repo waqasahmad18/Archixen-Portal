@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   function handleLogout() {
     // Remove any session or token here if implemented
-    window.location.href = "/";
+    window.location.href = "http://localhost:3001/";
   }
   return (
     <div style={{ minHeight: '100vh', background: '#f6f8fa' }}>

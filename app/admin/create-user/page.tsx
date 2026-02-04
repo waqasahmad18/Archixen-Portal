@@ -44,8 +44,8 @@ export default function CreateUserPage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f6f8fa' }}>
-      <div style={{ maxWidth: 520, margin: '0 auto', background: '#fff', borderRadius: 16, boxShadow: '0 2px 16px rgba(0,0,0,0.07)', padding: 36 }}>
+    <div style={{ width: '100%' }}>
+      <div style={{ maxWidth: 600, margin: '0 auto', background: '#fff', borderRadius: 16, boxShadow: '0 2px 16px rgba(0,0,0,0.07)', padding: 36 }}>
         <h2 style={{ fontSize: 26, fontWeight: 700, marginBottom: 24, color: '#222', textAlign: 'center' }}>Create New User</h2>
         <form onSubmit={handleCreateUser}>
           <input
