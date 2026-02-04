@@ -2,14 +2,9 @@ import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 import { ObjectId } from "mongodb";
 
-export async function GET(req: Request, { params }: { params: { id?: string } }) {
-  let id = params?.id;
+export async function GET(req: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
   if (!id) {
-    const url = new URL(req.url);
-    const parts = url.pathname.split("/").filter(Boolean);
-    id = parts[parts.length - 1];
-  }
-  if (!id || id === "invoice") {
     return NextResponse.json({ success: false, error: "Missing invoice id" }, { status: 400 });
   }
 
